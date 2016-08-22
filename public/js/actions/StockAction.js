@@ -1,6 +1,6 @@
 import dispatcher from '../dispatcher'
 import $ from 'jquery'
-const local = 'http://192.168.1.128:8081'// TODO CHANGE URL http://192.168.1.128:8081
+const local = ''// TODO CHANGE URL http://192.168.1.128:8081
 
 export function addCard(asset) {
   console.log(asset)
