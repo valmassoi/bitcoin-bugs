@@ -1,17 +1,16 @@
 'use strict'
 
-//https://www.quandl.com/docs/api
+// https://www.quandl.com/docs/api
 
 const express = require('express')
 const http = require('http')
 const routes = require('./app/routes/stocks')
-const mongo = require('mongodb').MongoClient
 const cors = require('cors')
 const bodyParser = require('body-parser')
 
 const app = express()
 
-app.use(express.static(__dirname+'/public/'))
+app.use(express.static(__dirname + '/public/'))
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.enable('trust proxy')

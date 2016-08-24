@@ -57,13 +57,14 @@ export default class Chart extends Component {
   }
 
   updateChart() {
-    console.log("update chart");
+    console.log('update chart')
     const data = StockStore.getData()
-    console.log(data);
+    console.log(data)
     const chart = this.state.chart
     const siri = {
       name: [data[0].asset],
       data: data[0].data,
+      color: data[0].asset === 'GOLD' ? '#FFD700' : data[0].asset === 'SILVER' ? '#fff' : data[0].asset === 'BITCOIN' ? '#2196f3' : '#f45b5b',
     }
     chart.addSeries(siri, true)
     const nav = chart.get('navigator')
@@ -73,13 +74,14 @@ export default class Chart extends Component {
   }
 
   removeSeries() {
-    const symbol = StockStore.getDeleteSymbol()
+    const asset = StockStore.getDeleteSymbol()
+    console.log('removing series', asset)
     const chart = this.state.chart
     chart.series.forEach((series) => {
-      if (series.name === symbol)
+      console.log(series.name[0])
+      if (series.name[0] === asset)
         series.remove(true)
-    }
-    )
+    })
   }
 
   render() {

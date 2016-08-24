@@ -8,6 +8,10 @@ body {
 .hidden {
   display: none !important; }
 
+.nav-pills {
+  margin-top: 10px;
+  cursor: pointer; }
+
 .tickercard {
   background: white;
   color: #333;
